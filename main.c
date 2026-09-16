@@ -65,6 +65,14 @@ void hospitalMenue();
 void printSpecialties();
 void printWards();
 
+void registerPatient(char names[][50],
+                     int age[],
+                     int urg[],
+                     int spec[],
+                     int *pCount);
+
+
+
 int main()
 {
     char patientNames[MAX_PATIENTS][50];
@@ -80,11 +88,63 @@ int main()
 
     int patientCount = 0;
 
+    int choice;
 
     hospitalHeader();
-    hospitalMenue();
-    printSpecialties();
-    printWards();
+
+do
+ {
+       hospitalMenue();
+       printf("\nSelect an option: ");
+       scanf("%d", &choice);
+
+       switch(choice)
+    {
+        case 1:
+            registerPatient(patientNames,
+                            ages,
+                            urgency,
+                            specialty,
+                            &patientCount);
+            break;
+
+         case 2:
+            //patient search
+            break;
+
+        case 3:
+            //Priority queue
+            break;
+
+        case 4:
+            //Bed monitoring
+            break;
+
+        case 5:
+            printSpecialties();
+            printWards();
+            break;
+
+        case 6:
+            //Reports
+            break;
+
+        case 7:
+            //Save feature
+            break;
+
+        case 0:
+            printf("\nExiting Smart Hospital System...\n");
+            break;
+
+        default:
+            printf("\nInvalid option!\n");
+    }
+
+ } while(choice != 0);
+
+
+
 
 
     return 0;
@@ -175,4 +235,96 @@ void printWards(void)
     }
 
     printf("==========================================================================\n");
+}
+
+void registerPatient(char names[][50],
+                     int age[],
+                     int urg[],
+                     int spec[],
+                     int *pCount)
+{
+    int idx;
+    int i;
+
+    if(*pCount >= MAX_PATIENTS)
+    {
+        printf("\nPatient database is full!\n");
+        return;
+    }
+
+    idx = *pCount;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("                  PATIENT REGISTRATION\n");
+    printf("============================================================\n");
+
+    printf("Generated Patient ID : PAT-%04d\n", 1001 + idx);
+
+    printf("\nPatient Name : ");
+    scanf(" %[^\n]", names[idx]);
+
+
+    do
+    {
+        printf("Age          : ");
+        scanf("%d", &age[idx]);
+
+        if(age[idx] < 0 || age[idx] > 120)
+        {
+            printf("Invalid age. Please try again.\n");
+        }
+
+    } while(age[idx] < 0 || age[idx] > 120);
+
+
+    printf("\n");
+    printf("+---------------- TRIAGE LEVEL ----------------+\n");
+    printf("| 1. Normal                                    |\n");
+    printf("| 2. Urgent                                    |\n");
+    printf("| 3. Critical                                  |\n");
+    printf("+----------------------------------------------+\n");
+
+    do
+    {
+        printf("Select Triage Level : ");
+        scanf("%d", &urg[idx]);
+
+    } while(urg[idx] < 1 || urg[idx] > 3);
+
+
+    printf("\nAVAILABLE SPECIALTIES\n");
+    printf("------------------------------------------------------------\n");
+
+    for(i = 0; i < SPECIALTIES; i++)
+    {
+        printf("[%d] %-25s LKR %.2f\n",
+               i + 1,
+               specialtyNames[i],
+               specialtyFees[i]);
+    }
+
+
+    do
+    {
+        printf("\nSelect Specialty ID : ");
+        scanf("%d", &spec[idx]);
+
+    } while(spec[idx] < 1 || spec[idx] > SPECIALTIES);
+
+
+    (*pCount)++;
+
+
+    printf("\n");
+    printf("+----------------------------------------------------------+\n");
+    printf("|              REGISTRATION SUCCESSFUL                     |\n");
+    printf("+----------------------------------------------------------+\n");
+
+    printf(" Patient ID : PAT-%04d\n", 1001 + idx);
+    printf(" Patient    : %s\n", names[idx]);
+    printf(" Age        : %d\n", age[idx]);
+    printf(" Specialty  : %s\n", specialtyNames[spec[idx] - 1]);
+
+    printf("+----------------------------------------------------------+\n");
 }
