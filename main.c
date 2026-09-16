@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
-    printf("Hello world!\n");
+    printf("Smart Hospital Patient & Resource Allocation System\n");
     return 0;
 }
