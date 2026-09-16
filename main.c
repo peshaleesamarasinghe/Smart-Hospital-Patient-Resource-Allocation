@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#define MAX_PATIENTS 100
 #define SPECIALTIES 4
 #define WARDS 4
 
@@ -66,6 +67,20 @@ void printWards();
 
 int main()
 {
+    char patientNames[MAX_PATIENTS][50];
+
+    int ages[MAX_PATIENTS];
+    int urgency[MAX_PATIENTS];
+    int specialty[MAX_PATIENTS];
+
+    int admitted[MAX_PATIENTS];
+    int ward[MAX_PATIENTS];
+    int bedNumber[MAX_PATIENTS];
+    int days[MAX_PATIENTS];
+
+    int patientCount = 0;
+
+
     hospitalHeader();
     hospitalMenue();
     printSpecialties();
