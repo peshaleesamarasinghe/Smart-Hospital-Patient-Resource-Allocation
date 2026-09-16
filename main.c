@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #define SPECIALTIES 4
+#define WARDS 4
 
 const char specialtyNames[SPECIALTIES][30] =
 {
@@ -34,15 +35,41 @@ const int dailyPatientCaps[SPECIALTIES] =
     10
 };
 
+const char wardNames[WARDS][30] =
+{
+    "General Ward",
+    "Paediatric Ward",
+    "Surgical Ward",
+    "ICU"
+};
+
+const double wardRates[WARDS] =
+{
+    3000.00,
+    6000.00,
+    12000.00,
+    25000.00
+};
+
+const int wardCapacities[WARDS] =
+{
+    20,
+    10,
+    10,
+    5
+};
+
 void hospitalHeader();
 void hospitalMenue();
 void printSpecialties();
+void printWards();
 
 int main()
 {
     hospitalHeader();
     hospitalMenue();
     printSpecialties();
+    printWards();
 
 
     return 0;
@@ -82,7 +109,7 @@ void hospitalMenue()
     printf("3. Exit\n");
 }
 
-void printSpecialties(void)
+void printSpecialties()
 {
     int i;
 
@@ -104,6 +131,32 @@ void printSpecialties(void)
                specialtyFees[i],
                consultationTimes[i],
                dailyPatientCaps[i]);
+    }
+
+    printf("==========================================================================\n");
+}
+
+void printWards(void)
+{
+    int i;
+
+    printf("\n");
+    printf("==========================================================================\n");
+    printf("                           HOSPITAL WARDS\n");
+    printf("==========================================================================\n");
+
+    printf("%-4s %-25s %-15s %-10s\n",
+           "ID", "WARD", "RATE/DAY", "CAPACITY");
+
+    printf("--------------------------------------------------------------------------\n");
+
+    for(i = 0; i < WARDS; i++)
+    {
+        printf("%-4d %-25s LKR %-11.2f %-10d\n",
+               i + 1,
+               wardNames[i],
+               wardRates[i],
+               wardCapacities[i]);
     }
 
     printf("==========================================================================\n");
