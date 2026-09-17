@@ -69,7 +69,9 @@ void registerPatient(char names[][50],
                      int age[],
                      int urg[],
                      int spec[],
-                     int *pCount);
+                     double wait[],
+                     int *pCount,
+                     int qCount[]);
 
 
 
@@ -85,6 +87,12 @@ int main()
     int ward[MAX_PATIENTS];
     int bedNumber[MAX_PATIENTS];
     int days[MAX_PATIENTS];
+
+
+    double waitTime[MAX_PATIENTS];
+
+    int specialtyQueue[SPECIALTIES] = {0};
+
 
     int patientCount = 0;
 
@@ -102,10 +110,12 @@ do
     {
         case 1:
             registerPatient(patientNames,
-                            ages,
-                            urgency,
-                            specialty,
-                            &patientCount);
+                ages,
+                urgency,
+                specialty,
+                waitTime,
+                &patientCount,
+                specialtyQueue);
             break;
 
          case 2:
@@ -181,7 +191,12 @@ void hospitalMenue()
     printf("=========================================\n");
     printf("1. Register Patient\n");
     printf("2. Search Patient\n");
-    printf("3. Exit\n");
+    printf("3. \n");
+    printf("4. \n");
+    printf("5. \n");
+    printf("6. \n");
+    printf("7. \n");
+    printf("8. Exit\n");
 }
 
 void printSpecialties()
@@ -241,10 +256,13 @@ void registerPatient(char names[][50],
                      int age[],
                      int urg[],
                      int spec[],
-                     int *pCount)
+                     double wait[],
+                     int *pCount,
+                     int qCount[])
 {
     int idx;
     int i;
+    int sIndex;
 
     if(*pCount >= MAX_PATIENTS)
     {
@@ -312,6 +330,12 @@ void registerPatient(char names[][50],
 
     } while(spec[idx] < 1 || spec[idx] > SPECIALTIES);
 
+    sIndex = spec[idx] - 1;
+
+    wait[idx] = qCount[sIndex] * consultationTimes[sIndex];
+
+    qCount[sIndex]++;
+
 
     (*pCount)++;
 
@@ -325,6 +349,7 @@ void registerPatient(char names[][50],
     printf(" Patient    : %s\n", names[idx]);
     printf(" Age        : %d\n", age[idx]);
     printf(" Specialty  : %s\n", specialtyNames[spec[idx] - 1]);
+    printf(" Waiting    : %.0f minutes\n", wait[idx]);
 
     printf("+----------------------------------------------------------+\n");
 }
