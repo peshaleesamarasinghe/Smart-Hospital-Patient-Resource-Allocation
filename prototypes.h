@@ -5,6 +5,7 @@
 
 extern const char specialtyNames[SPECIALTIES][30];
 extern const char wardNames[WARDS][30];
+extern const int wardCapacities[WARDS];
 
 void hospitalHeader();
 void hospitalMenue();
@@ -90,3 +91,5 @@ void findPatientBill(char patientNames[][50],
 void displayTriageQueue(char patientNames[][50],
                         int urgency[],
                         int patientCount);
+
+void monitorBeds(int bedOccupancy[][MAX_BEDS]);

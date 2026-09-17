@@ -153,7 +153,7 @@ do
             break;
 
         case 4:
-            //Bed monitoring
+            monitorBeds(bedOccupancy);
             break;
 
         case 5:
