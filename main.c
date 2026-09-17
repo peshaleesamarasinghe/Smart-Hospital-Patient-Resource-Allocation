@@ -127,8 +127,13 @@ do
             break;
 
         case 5:
-            printSpecialties();
-            printWards();
+            printSpecialties(specialtyNames,
+                            specialtyFees,
+                            consultationTimes,
+                            dailyPatientCaps);
+            printWards(wardNames,
+                       wardRates,
+                       wardCapacities);
             break;
 
         case 6:

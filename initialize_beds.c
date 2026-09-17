@@ -15,7 +15,9 @@ void initializeBeds(int bedOccupancy[][MAX_BEDS])
         }
     }
 }
-int assignNextBed(int bedOccupancy[][MAX_BEDS], int wardIndex,const int wardCapacities[WARDS])
+int assignNextBed(int bedOccupancy[][MAX_BEDS],
+                  int wardIndex,
+                  const int wardCapacities[WARDS])
 {
     int j;
 

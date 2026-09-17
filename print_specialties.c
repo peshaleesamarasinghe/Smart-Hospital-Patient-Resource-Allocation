@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include "prototypes.h"
 
-#define SPECIALTIES 4
 
-
-void printSpecialties(const char specialtyNames[SPECIALTIES][30],const double specialtyFees[SPECIALTIES],const int consultationTimes[SPECIALTIES],const int dailyPatientCaps[SPECIALTIES])
+void printSpecialties(const char specialtyNames[SPECIALTIES][30],
+                      const double specialtyFees[SPECIALTIES],
+                      const int consultationTimes[SPECIALTIES],
+                      const int dailyPatientCaps[SPECIALTIES])
 {
     int i;
 

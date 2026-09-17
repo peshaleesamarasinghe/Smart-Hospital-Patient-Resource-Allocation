@@ -5,8 +5,13 @@
 
 void hospitalHeader();
 void hospitalMenue();
-void printSpecialties();
-void printWards();
+void printSpecialties(const char specialtyNames[][30],
+                      const double specialtyFees[],
+                      const int consultationTimes[],
+                      const int dailyPatientCaps[]);
+void printWards(const char wardNames[WARDS][30],
+                const double wardRates[WARDS],
+                const int wardCapacities[WARDS]);
 
 void registerPatient(char patientNames[][50],
                      int ages[],
@@ -29,4 +34,6 @@ void registerPatient(char patientNames[][50],
 
 void initializeBeds(int beds[][MAX_BEDS]);
 
-int assignNextBed(int beds[][MAX_BEDS], int wardIndex,const int wardCapacities[WARDS]);
+int assignNextBed(int beds[][MAX_BEDS],
+                  int wardIndex,
+                  const int wardCapacities[WARDS]);

@@ -108,24 +108,10 @@ void registerPatient(char patientNames[][50],
 
     } while(admitted[idx] != 0 && admitted[idx] != 1);
 
-    if(bedNumber[idx] == 0)
-    {
-        printf("\nSorry! No available beds in %s.\n",wardNames[ward[idx] - 1]);
-        printf("Patient will remain as an outpatient.\n");
-
-        ward[idx] = 0;
-        bedNumber[idx] = 0;
-        days[idx] = 0;
-    }
-    else
-    {
-         printf("\nBed %d successfully allocated in %s.\n",bedNumber[idx],wardNames[ward[idx] - 1]);
-    }
-
+    if(admitted[idx] == 1)
+{
     printf("\nAVAILABLE WARDS\n");
     printf("------------------------------------------------------------\n");
-
-
 
     for(i = 0; i < WARDS; i++)
     {
@@ -143,12 +129,42 @@ void registerPatient(char patientNames[][50],
     } while(ward[idx] < 1 || ward[idx] > WARDS);
 
 
-    do
-    {
-        printf("Days Admitted : ");
-        scanf("%d", &days[idx]);
+    bedNumber[idx] = assignNextBed(bedOccupancy,
+                                   ward[idx] - 1,
+                                   wardCapacities);
 
-    } while(days[idx] < 1);
+
+    if(bedNumber[idx] == 0)
+    {
+        printf("\nSorry! No available beds in %s.\n",
+               wardNames[ward[idx] - 1]);
+
+        printf("Patient will remain as an outpatient.\n");
+
+        admitted[idx] = 0;
+        ward[idx] = 0;
+        days[idx] = 0;
+    }
+    else
+    {
+        printf("\nBed %d successfully allocated in %s.\n",
+               bedNumber[idx],
+               wardNames[ward[idx] - 1]);
+
+        do
+        {
+            printf("Days Admitted : ");
+            scanf("%d", &days[idx]);
+
+        } while(days[idx] < 1);
+    }
+}
+else
+{
+    ward[idx] = 0;
+    bedNumber[idx] = 0;
+    days[idx] = 0;
+}
 
 
 
@@ -170,8 +186,6 @@ void registerPatient(char patientNames[][50],
 
         if(admitted[idx] == 1)
     {
-      bedNumber[idx] = assignNextBed(bedOccupancy, ward[idx] - 1,wardCapacities);
-
       printf(" Ward       : %s\n",wardNames[ward[idx] - 1]);
       printf(" Bed Number : %d\n",bedNumber[idx]);
       printf(" Stay       : %d Days\n",days[idx]);

@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "prototypes.h"
 
-#define WARDS 4
-
-void printWards(const char wardNames[WARDS][30],const double wardRates[WARDS],const int wardCapacities[WARDS])
+void printWards(const char wardNames[WARDS][30],
+                const double wardRates[WARDS],
+                const int wardCapacities[WARDS])
 {
     int i;
 
