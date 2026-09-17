@@ -47,3 +47,22 @@ int assignNextBed(int bedOccupancy[][MAX_BEDS],
 double calculateSurcharge(double base,int triage);
 double calculateWardCost(int ward,int days,const double wardRates[WARDS]);
 double calculateDiscount(double gross,int ages);
+
+void printBillReceipt(int idx,
+                      char patientNames[][50],
+                      int ages[],
+                      int urgancy[],
+                      int specialty[],
+                      int admitted[],
+                      int ward[],
+                      int bedNumber[],
+                      int days[],
+                      double waitTime[],
+                      double baseFee[],
+                      double surcharge[],
+                      double wardCost[],
+                      double grossBill[],
+                      double discount[],
+                      double finalBill[],
+                      const char specialtyNames[][30],
+                      const char wardNames[][30]);

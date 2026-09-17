@@ -174,9 +174,6 @@ else
 
 
 
-    (*patientCount)++;
-
-
     printf("\n");
     printf("+----------------------------------------------------------+\n");
     printf("|              REGISTRATION SUCCESSFUL                     |\n");
@@ -216,4 +213,34 @@ discount[idx] = calculateDiscount(grossBill[idx], ages[idx]);
 finalBill[idx] = grossBill[idx] - discount[idx];
 
 printf(" Final Bill : LKR %.2f\n", finalBill[idx]);
+
+
+baseFee[idx] = specialtyFees[specialty[idx] - 1];
+surcharge[idx] = calculateSurcharge(baseFee[idx], urgancy[idx]);
+wardCost[idx] = calculateWardCost(ward[idx], days[idx],wardRates);
+grossBill[idx] = baseFee[idx] + surcharge[idx] + wardCost[idx];
+discount[idx] = calculateDiscount(grossBill[idx], ages[idx]);
+finalBill[idx] = grossBill[idx] - discount[idx];
+
+printBillReceipt(idx,
+                 patientNames,
+                 ages,
+                 urgancy,
+                 specialty,
+                 admitted,
+                 ward,
+                 bedNumber,
+                 days,
+                 waitTime,
+                 baseFee,
+                 surcharge,
+                 wardCost,
+                 grossBill,
+                 discount,
+                 finalBill,
+                 specialtyNames,
+                 wardNames);
+
+        (*patientCount)++;
+
 }
