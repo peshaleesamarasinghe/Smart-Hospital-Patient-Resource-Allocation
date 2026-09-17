@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include "prototypes.h"
 
-#define MAX_PATIENTS 100
-#define SPECIALTIES 4
-#define WARDS 4
-
 void registerPatient(char patientNames[][50],
                      int ages[],
                      int urgancy[],
@@ -19,7 +15,10 @@ void registerPatient(char patientNames[][50],
                      const double specialtyFees[SPECIALTIES],
                      const int consultationTimes[SPECIALTIES],
                      const char wardNames[WARDS][30],
-                     const double wardRates[WARDS])
+                     const double wardRates[WARDS],
+                     const int wardCapacities[],
+                     int bedNumber[],
+                     int bedOccupancy[][MAX_BEDS])
 
 {
     int idx;
@@ -109,13 +108,24 @@ void registerPatient(char patientNames[][50],
 
     } while(admitted[idx] != 0 && admitted[idx] != 1);
 
-    ward[idx] = 0;
-    days[idx] = 0;
+    if(bedNumber[idx] == 0)
+    {
+        printf("\nSorry! No available beds in %s.\n",wardNames[ward[idx] - 1]);
+        printf("Patient will remain as an outpatient.\n");
 
-    if(admitted[idx] == 1)
-  {
+        ward[idx] = 0;
+        bedNumber[idx] = 0;
+        days[idx] = 0;
+    }
+    else
+    {
+         printf("\nBed %d successfully allocated in %s.\n",bedNumber[idx],wardNames[ward[idx] - 1]);
+    }
+
     printf("\nAVAILABLE WARDS\n");
     printf("------------------------------------------------------------\n");
+
+
 
     for(i = 0; i < WARDS; i++)
     {
@@ -139,7 +149,7 @@ void registerPatient(char patientNames[][50],
         scanf("%d", &days[idx]);
 
     } while(days[idx] < 1);
-  }
+
 
 
     (*patientCount)++;
@@ -160,8 +170,10 @@ void registerPatient(char patientNames[][50],
 
         if(admitted[idx] == 1)
     {
-      printf(" Ward       : %s\n",wardNames[ward[idx] - 1]);
+      bedNumber[idx] = assignNextBed(bedOccupancy, ward[idx] - 1,wardCapacities);
 
+      printf(" Ward       : %s\n",wardNames[ward[idx] - 1]);
+      printf(" Bed Number : %d\n",bedNumber[idx]);
       printf(" Stay       : %d Days\n",days[idx]);
     }
     else

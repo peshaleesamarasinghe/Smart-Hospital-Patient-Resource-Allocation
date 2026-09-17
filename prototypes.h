@@ -22,7 +22,10 @@ void registerPatient(char patientNames[][50],
                      const double specialtyFees[],
                      const int consultationTimes[],
                      const char wardNames[][30],
-                     const double wardRates[]);
+                     const double wardRates[],
+                     const int wardCapacities[],
+                     int bedNumber[],
+                     int bedOccupancy[][MAX_BEDS]);
 
 void initializeBeds(int beds[][MAX_BEDS]);
 

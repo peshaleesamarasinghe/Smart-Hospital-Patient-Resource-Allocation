@@ -2,7 +2,7 @@
 #include "prototypes.h"
 
 
-void initializeBeds(int beds[][MAX_BEDS])
+void initializeBeds(int bedOccupancy[][MAX_BEDS])
 {
     int i;
     int j;
@@ -11,19 +11,19 @@ void initializeBeds(int beds[][MAX_BEDS])
     {
         for(j = 0; j < MAX_BEDS; j++)
         {
-            beds[i][j] = 0;
+            bedOccupancy[i][j] = 0;
         }
     }
 }
-int assignNextBed(int beds[][MAX_BEDS], int wardIndex,const int wardCapacities[WARDS])
+int assignNextBed(int bedOccupancy[][MAX_BEDS], int wardIndex,const int wardCapacities[WARDS])
 {
     int j;
 
     for(j = 0; j < wardCapacities[wardIndex]; j++)
     {
-        if(beds[wardIndex][j] == 0)
+        if(bedOccupancy[wardIndex][j] == 0)
         {
-            beds[wardIndex][j] = 1;
+            bedOccupancy[wardIndex][j] = 1;
 
             return j + 1;
         }

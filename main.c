@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include "prototypes.h"
 
-#define MAX_PATIENTS 100
-#define SPECIALTIES 4
-#define WARDS 4
-
 const char specialtyNames[SPECIALTIES][30] =
 {
     "General Practice (OPD)",
@@ -112,7 +108,10 @@ do
                     specialtyFees,
                     consultationTimes,
                     wardNames,
-                    wardRates);
+                    wardRates,
+                    wardCapacities,
+                    bedNumber,
+                    bedOccupancy);
             break;
 
         case 2:
