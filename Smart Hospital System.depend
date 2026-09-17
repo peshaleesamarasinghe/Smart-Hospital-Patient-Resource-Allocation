@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1789652473 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\main.c
+1789663673 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\main.c
 	<stdio.h>
 	"prototypes.h"
 
@@ -7,13 +7,13 @@
 	<stdio.h>
 	"prototypes.h"
 
-1789653329 c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\prototypes.h
+1789665277 c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\prototypes.h
 
 1789651387 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\hospital_menue.c
 	<stdio.h>
 	"prototypes.h"
 
-1789652413 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\print_specialties.c
+1789663673 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\print_specialties.c
 	<stdio.h>
 	"prototypes.h"
 
@@ -21,7 +21,11 @@
 	<stdio.h>
 	"prototypes.h"
 
-1789652910 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\register_patient.c
+1789657218 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\register_patient.c
+	<stdio.h>
+	"prototypes.h"
+
+1789664528 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\initialize_beds.c
 	<stdio.h>
 	"prototypes.h"
 

@@ -5,16 +5,16 @@
 #define SPECIALTIES 4
 #define WARDS 4
 
-void registerPatient(char names[][50],
-                     int age[],
-                     int urg[],
-                     int spec[],
-                     int adm[],
-                     int wId[],
-                     int stay[],
-                     double wait[],
-                     int *pCount,
-                     int qCount[],
+void registerPatient(char patientNames[][50],
+                     int ages[],
+                     int urgancy[],
+                     int specialty[],
+                     int admitted[],
+                     int ward[],
+                     int days[],
+                     double waitTime[],
+                     int *patientCount,
+                     int specialtyQueue[],
                      const char specialtyNames[SPECIALTIES][30],
                      const double specialtyFees[SPECIALTIES],
                      const int consultationTimes[SPECIALTIES],
@@ -26,13 +26,13 @@ void registerPatient(char names[][50],
     int i;
     int sIndex;
 
-    if(*pCount >= MAX_PATIENTS)
+    if(*patientCount >= MAX_PATIENTS)
     {
         printf("\nPatient database is full!\n");
         return;
     }
 
-    idx = *pCount;
+    idx = *patientCount;
 
     printf("\n");
     printf("============================================================\n");
@@ -42,20 +42,20 @@ void registerPatient(char names[][50],
     printf("Generated Patient ID : PAT-%04d\n", 1001 + idx);
 
     printf("\nPatient Name : ");
-    scanf(" %[^\n]", names[idx]);
+    scanf(" %[^\n]", patientNames[idx]);
 
 
     do
     {
         printf("Age          : ");
-        scanf("%d", &age[idx]);
+        scanf("%d", &ages[idx]);
 
-        if(age[idx] < 0 || age[idx] > 120)
+        if(ages[idx] < 0 || ages[idx] > 120)
         {
             printf("Invalid age. Please try again.\n");
         }
 
-    } while(age[idx] < 0 || age[idx] > 120);
+    } while(ages[idx] < 0 || ages[idx] > 120);
 
 
     printf("\n");
@@ -68,9 +68,9 @@ void registerPatient(char names[][50],
     do
     {
         printf("Select Triage Level : ");
-        scanf("%d", &urg[idx]);
+        scanf("%d", &urgancy[idx]);
 
-    } while(urg[idx] < 1 || urg[idx] > 3);
+    } while(urgancy[idx] < 1 || urgancy[idx] > 3);
 
 
     printf("\nAVAILABLE SPECIALTIES\n");
@@ -88,15 +88,15 @@ void registerPatient(char names[][50],
     do
     {
         printf("\nSelect Specialty ID : ");
-        scanf("%d", &spec[idx]);
+        scanf("%d", &specialty[idx]);
 
-    } while(spec[idx] < 1 || spec[idx] > SPECIALTIES);
+    } while(specialty[idx] < 1 || specialty[idx] > SPECIALTIES);
 
-    sIndex = spec[idx] - 1;
+    sIndex = specialty[idx] - 1;
 
-    wait[idx] = qCount[sIndex] * consultationTimes[sIndex];
+    waitTime[idx] = specialtyQueue[sIndex] * consultationTimes[sIndex];
 
-    qCount[sIndex]++;
+    specialtyQueue[sIndex]++;
 
     printf("\nIs patient admitted to a ward?\n");
     printf("[1] Yes\n");
@@ -105,15 +105,15 @@ void registerPatient(char names[][50],
     do
     {
       printf("Selection : ");
-      scanf("%d", &adm[idx]);
+      scanf("%d", &admitted[idx]);
 
-    } while(adm[idx] != 0 && adm[idx] != 1);
+    } while(admitted[idx] != 0 && admitted[idx] != 1);
 
-    wId[idx] = 0;
-    stay[idx] = 0;
+    ward[idx] = 0;
+    days[idx] = 0;
 
-    if(adm[idx] == 1)
-{
+    if(admitted[idx] == 1)
+  {
     printf("\nAVAILABLE WARDS\n");
     printf("------------------------------------------------------------\n");
 
@@ -128,21 +128,21 @@ void registerPatient(char names[][50],
     do
     {
         printf("\nSelect Ward ID : ");
-        scanf("%d", &wId[idx]);
+        scanf("%d", &ward[idx]);
 
-    } while(wId[idx] < 1 || wId[idx] > WARDS);
+    } while(ward[idx] < 1 || ward[idx] > WARDS);
 
 
     do
     {
         printf("Days Admitted : ");
-        scanf("%d", &stay[idx]);
+        scanf("%d", &days[idx]);
 
-    } while(stay[idx] < 1);
-}
+    } while(days[idx] < 1);
+  }
 
 
-    (*pCount)++;
+    (*patientCount)++;
 
 
     printf("\n");
@@ -151,18 +151,18 @@ void registerPatient(char names[][50],
     printf("+----------------------------------------------------------+\n");
 
     printf(" Patient ID : PAT-%04d\n", 1001 + idx);
-    printf(" Patient    : %s\n", names[idx]);
-    printf(" Age        : %d\n", age[idx]);
-    printf(" Specialty  : %s\n", specialtyNames[spec[idx] - 1]);
-    printf(" Waiting    : %.0f minutes\n", wait[idx]);
+    printf(" Patient    : %s\n", patientNames[idx]);
+    printf(" Age        : %d\n", ages[idx]);
+    printf(" Specialty  : %s\n", specialtyNames[specialty[idx] - 1]);
+    printf(" Waiting    : %.0f minutes\n", waitTime[idx]);
 
     printf("+----------------------------------------------------------+\n");
 
-        if(adm[idx] == 1)
+        if(admitted[idx] == 1)
     {
-      printf(" Ward       : %s\n",wardNames[wId[idx] - 1]);
+      printf(" Ward       : %s\n",wardNames[ward[idx] - 1]);
 
-      printf(" Stay       : %d Days\n",stay[idx]);
+      printf(" Stay       : %d Days\n",days[idx]);
     }
     else
     {

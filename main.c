@@ -72,6 +72,7 @@ int main()
     int admitted[MAX_PATIENTS];
     int ward[MAX_PATIENTS];
     int bedNumber[MAX_PATIENTS];
+    int bedOccupancy[WARDS][MAX_BEDS];
     int days[MAX_PATIENTS];
 
 
@@ -83,6 +84,8 @@ int main()
     int patientCount = 0;
 
     int choice;
+
+    initializeBeds(bedOccupancy);
 
     hospitalHeader();
 
