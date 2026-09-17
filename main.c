@@ -147,7 +147,9 @@ do
             break;
 
         case 3:
-            //Priority queue
+            displayTriageQueue(patientNames,
+                       urgency,
+                       patientCount);
             break;
 
         case 4:

@@ -86,3 +86,7 @@ void findPatientBill(char patientNames[][50],
                      double discount[],
                      double finalBill[],
                      int patientCount);
+
+void displayTriageQueue(char patientNames[][50],
+                        int urgency[],
+                        int patientCount);
