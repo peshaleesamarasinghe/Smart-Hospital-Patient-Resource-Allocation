@@ -69,6 +69,9 @@ void registerPatient(char names[][50],
                      int age[],
                      int urg[],
                      int spec[],
+                     int adm[],
+                     int wId[],
+                     int stay[],
                      double wait[],
                      int *pCount,
                      int qCount[]);
@@ -113,6 +116,9 @@ do
                 ages,
                 urgency,
                 specialty,
+                admitted,
+                ward,
+                days,
                 waitTime,
                 &patientCount,
                 specialtyQueue);
@@ -256,9 +262,13 @@ void registerPatient(char names[][50],
                      int age[],
                      int urg[],
                      int spec[],
+                     int adm[],
+                     int wId[],
+                     int stay[],
                      double wait[],
                      int *pCount,
                      int qCount[])
+
 {
     int idx;
     int i;
@@ -336,6 +346,49 @@ void registerPatient(char names[][50],
 
     qCount[sIndex]++;
 
+    printf("\nIs patient admitted to a ward?\n");
+    printf("[1] Yes\n");
+    printf("[0] No - Outpatient\n");
+
+    do
+    {
+      printf("Selection : ");
+      scanf("%d", &adm[idx]);
+
+    } while(adm[idx] != 0 && adm[idx] != 1);
+
+    wId[idx] = 0;
+    stay[idx] = 0;
+
+    if(adm[idx] == 1)
+{
+    printf("\nAVAILABLE WARDS\n");
+    printf("------------------------------------------------------------\n");
+
+    for(i = 0; i < WARDS; i++)
+    {
+        printf("[%d] %-22s LKR %.2f/day\n",
+               i + 1,
+               wardNames[i],
+               wardRates[i]);
+    }
+
+    do
+    {
+        printf("\nSelect Ward ID : ");
+        scanf("%d", &wId[idx]);
+
+    } while(wId[idx] < 1 || wId[idx] > WARDS);
+
+
+    do
+    {
+        printf("Days Admitted : ");
+        scanf("%d", &stay[idx]);
+
+    } while(stay[idx] < 1);
+}
+
 
     (*pCount)++;
 
@@ -352,4 +405,19 @@ void registerPatient(char names[][50],
     printf(" Waiting    : %.0f minutes\n", wait[idx]);
 
     printf("+----------------------------------------------------------+\n");
+
+        if(adm[idx] == 1)
+    {
+      printf(" Ward       : %s\n",wardNames[wId[idx] - 1]);
+
+      printf(" Stay       : %d Days\n",stay[idx]);
+    }
+    else
+    {
+      printf(" Admission  : Outpatient / OPD\n");
+    }
+
+printf("+----------------------------------------------------------+\n");
 }
+
+
