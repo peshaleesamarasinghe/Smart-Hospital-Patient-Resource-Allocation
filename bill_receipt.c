@@ -71,3 +71,60 @@ void printBillReceipt(int idx,
     printf("FINAL PAYABLE    : LKR %10.2f\n", finalBill[idx]);
     printf("============================================================\n");
 }
+
+
+void findPatientBill(char patientNames[][50],
+                     int ages[],
+                     int urgancy[],
+                     int specialty[],
+                     int admitted[],
+                     int ward[],
+                     int bedNumber[],
+                     int days[],
+                     double waitTime[],
+                     double baseFee[],
+                     double surcharge[],
+                     double wardCost[],
+                     double grossBill[],
+                     double discount[],
+                     double finalBill[],
+                     int patientCount)
+{
+    int patientNumber;
+    int index;
+
+    printf("\n");
+    printf("============================================================\n");
+    printf("                    PATIENT SEARCH\n");
+    printf("============================================================\n");
+
+    printf("Enter Patient ID number (example 1001): ");
+    scanf("%d", &patientNumber);
+
+    index = patientNumber - 1001;
+
+    if(index < 0 || index >= patientCount)
+    {
+        printf("\nPatient not found!\n");
+        return;
+    }
+
+    printBillReceipt(index,
+                     patientNames,
+                     ages,
+                     urgancy,
+                     specialty,
+                     admitted,
+                     ward,
+                     bedNumber,
+                     days,
+                     waitTime,
+                     baseFee,
+                     surcharge,
+                     wardCost,
+                     grossBill,
+                     discount,
+                     finalBill,
+                     specialtyNames,
+                     wardNames);
+ }

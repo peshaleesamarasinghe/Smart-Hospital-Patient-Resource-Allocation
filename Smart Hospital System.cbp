@@ -31,13 +31,32 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Doctor_Specialties_Data.c">
+		<Unit filename="bill_receipt.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Hospital_Wards_Data.c">
+		<Unit filename="calculations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hospital_header.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="hospital_menue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="initialize_beds.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="print_specialties.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="print_wards.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="prototypes.h" />
+		<Unit filename="register_patient.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />

@@ -128,7 +128,22 @@ do
             break;
 
         case 2:
-            //patient search
+            findPatientBill(patientNames,
+                     ages,
+                     urgency,
+                     specialty,
+                     admitted,
+                     ward,
+                     bedNumber,
+                     days,
+                     waitTime,
+                     baseFee,
+                     surcharge,
+                     wardCost,
+                     grossBill,
+                     discount,
+                     finalBill,
+                     patientCount);
             break;
 
         case 3:

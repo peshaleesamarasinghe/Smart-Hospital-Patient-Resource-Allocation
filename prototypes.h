@@ -3,6 +3,9 @@
 #define WARDS 4
 #define MAX_BEDS 20
 
+extern const char specialtyNames[SPECIALTIES][30];
+extern const char wardNames[WARDS][30];
+
 void hospitalHeader();
 void hospitalMenue();
 void printSpecialties(const char specialtyNames[][30],
@@ -66,3 +69,20 @@ void printBillReceipt(int idx,
                       double finalBill[],
                       const char specialtyNames[][30],
                       const char wardNames[][30]);
+
+void findPatientBill(char patientNames[][50],
+                     int ages[],
+                     int urgancy[],
+                     int specialty[],
+                     int admitted[],
+                     int ward[],
+                     int bedNumber[],
+                     int days[],
+                     double waitTime[],
+                     double baseFee[],
+                     double surcharge[],
+                     double wardCost[],
+                     double grossBill[],
+                     double discount[],
+                     double finalBill[],
+                     int patientCount);
