@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "prototypes.h"
 
+//initialize and assign beds
 
 void initializeBeds(int bedOccupancy[][MAX_BEDS])
 {

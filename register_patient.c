@@ -9,6 +9,12 @@ void registerPatient(char patientNames[][50],
                      int ward[],
                      int days[],
                      double waitTime[],
+                     double baseFee[MAX_PATIENTS],
+                     double surcharge[MAX_PATIENTS],
+                     double wardCost[MAX_PATIENTS],
+                     double grossBill[MAX_PATIENTS],
+                     double discount[MAX_PATIENTS],
+                     double finalBill[MAX_PATIENTS],
                      int *patientCount,
                      int specialtyQueue[],
                      const char specialtyNames[SPECIALTIES][30],
@@ -196,4 +202,18 @@ else
     }
 
 printf("+----------------------------------------------------------+\n");
+
+baseFee[idx] = specialtyFees[specialty[idx] - 1];
+
+surcharge[idx] = calculateSurcharge(baseFee[idx], urgancy[idx]);
+
+wardCost[idx] = calculateWardCost(ward[idx], days[idx],wardRates);
+
+grossBill[idx] = baseFee[idx] + surcharge[idx] + wardCost[idx];
+
+discount[idx] = calculateDiscount(grossBill[idx], ages[idx]);
+
+finalBill[idx] = grossBill[idx] - discount[idx];
+
+printf(" Final Bill : LKR %.2f\n", finalBill[idx]);
 }

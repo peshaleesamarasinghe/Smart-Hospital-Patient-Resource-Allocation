@@ -81,6 +81,13 @@ int main()
 
     int choice;
 
+    double baseFee[MAX_PATIENTS];
+    double surcharge[MAX_PATIENTS];
+    double wardCost[MAX_PATIENTS];
+    double grossBill[MAX_PATIENTS];
+    double discount[MAX_PATIENTS];
+    double finalBill[MAX_PATIENTS];
+
     initializeBeds(bedOccupancy);
 
     hospitalHeader();
@@ -102,6 +109,12 @@ do
                     ward,
                     days,
                     waitTime,
+                    baseFee,
+                    surcharge,
+                    wardCost,
+                    grossBill,
+                    discount,
+                    finalBill,
                     &patientCount,
                     specialtyQueue,
                     specialtyNames,

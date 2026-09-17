@@ -21,6 +21,12 @@ void registerPatient(char patientNames[][50],
                      int ward[],
                      int days[],
                      double waitTime[],
+                     double baseFee[],
+                     double surcharge[],
+                     double wardCost[],
+                     double grossBill[],
+                     double discount[],
+                     double finalBill[],
                      int *patientCount,
                      int specialtyQueue[],
                      const char specialtyNames[][30],
@@ -32,8 +38,12 @@ void registerPatient(char patientNames[][50],
                      int bedNumber[],
                      int bedOccupancy[][MAX_BEDS]);
 
-void initializeBeds(int beds[][MAX_BEDS]);
+void initializeBeds(int bedOccupancy[][MAX_BEDS]);
 
-int assignNextBed(int beds[][MAX_BEDS],
+int assignNextBed(int bedOccupancy[][MAX_BEDS],
                   int wardIndex,
                   const int wardCapacities[WARDS]);
+
+double calculateSurcharge(double base,int triage);
+double calculateWardCost(int ward,int days,const double wardRates[WARDS]);
+double calculateDiscount(double gross,int ages);
