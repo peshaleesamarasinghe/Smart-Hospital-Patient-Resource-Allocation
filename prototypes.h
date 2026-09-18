@@ -100,3 +100,5 @@ void generateReports(char patientNames[][50],
                      double discount[],
                      int patientCount,
                      int bedOccupancy[][MAX_BEDS]);
+
+void saveBeds(int bedOccupancy[][MAX_BEDS]);

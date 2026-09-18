@@ -46,3 +46,27 @@ void monitorBeds(int bedOccupancy[][MAX_BEDS])
 
     //later add positions of beds for easy lookup(bedLocations)
 }
+
+void saveBeds(int bedOccupancy[][MAX_BEDS])
+{
+    FILE *file = fopen("beds_status.txt", "w");
+
+    if(file == NULL)
+    {
+        printf("\nError: Could not save bed data!\n");
+        return;
+    }
+
+    for(int i = 0; i < WARDS; i++)
+    {
+        for(int j = 0; j < wardCapacities[i]; j++)
+        {
+            fprintf(file, "%d ", bedOccupancy[i][j]);
+        }
+
+        fprintf(file, "\n");
+    }
+
+    fclose(file);
+    printf("\nBed Occupancy Data Saved Successfully!\n");
+}

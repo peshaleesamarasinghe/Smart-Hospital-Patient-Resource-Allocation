@@ -177,7 +177,7 @@ do
             break;
 
         case 7:
-            //Save feature
+            saveBeds(bedOccupancy);
             break;
 
         case 0:
