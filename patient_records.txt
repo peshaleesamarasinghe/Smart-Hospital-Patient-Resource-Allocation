@@ -1,0 +1,22 @@
+Patient ID: PAT-1001
+Name: peshalee savindya
+Age: 21
+Triage Level: 1
+Specialty: Paediatrics
+Ward: Paediatric Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 14500.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: peshalee savindya
+Age: 21
+Triage Level: 2
+Specialty: Cardiology
+Ward: Surgical Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 29400.00
+------------------------------------------------------------

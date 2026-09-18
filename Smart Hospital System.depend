@@ -7,7 +7,7 @@
 	<stdio.h>
 	"prototypes.h"
 
-1789709970 c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\prototypes.h
+1789755349 c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\prototypes.h
 
 1789710018 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\hospital_menue.c
 	<stdio.h>
@@ -21,7 +21,7 @@
 	<stdio.h>
 	"prototypes.h"
 
-1789675251 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\register_patient.c
+1789755349 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\register_patient.c
 	<stdio.h>
 	"prototypes.h"
 
@@ -41,11 +41,15 @@
 	<stdio.h>
 	"prototypes.h"
 
-1789709970 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\bed_monitoring.c
+1789714622 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\bed_monitoring.c
 	<stdio.h>
 	"prototypes.h"
 
 1789708958 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\generate_report.c
+	<stdio.h>
+	"prototypes.h"
+
+1789755460 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\patient_logging.c
 	<stdio.h>
 	"prototypes.h"
 

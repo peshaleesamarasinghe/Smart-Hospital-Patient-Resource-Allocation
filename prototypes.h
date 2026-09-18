@@ -102,3 +102,15 @@ void generateReports(char patientNames[][50],
                      int bedOccupancy[][MAX_BEDS]);
 
 void saveBeds(int bedOccupancy[][MAX_BEDS]);
+
+void patientLog(int patientCount,
+                char patientNames[][50],
+                int ages[],
+                int urgency[],
+                int specialty[],
+                int admitted[],
+                int ward[],
+                int bedNumber[],
+                int days[],
+                double waitTime[],
+                double finalBill[]);

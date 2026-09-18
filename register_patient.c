@@ -241,6 +241,18 @@ printBillReceipt(idx,
                  specialtyNames,
                  wardNames);
 
+patientLog(*patientCount,
+           patientNames,
+           ages,
+           urgancy,
+           specialty,
+           admitted,
+           ward,
+           bedNumber,
+           days,
+           waitTime,
+           finalBill);
+
         (*patientCount)++;
 
 }
