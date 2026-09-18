@@ -93,3 +93,10 @@ void displayTriageQueue(char patientNames[][50],
                         int patientCount);
 
 void monitorBeds(int bedOccupancy[][MAX_BEDS]);
+
+void generateReports(char patientNames[][50],
+                     int urgency[],
+                     double finalBill[],
+                     double discount[],
+                     int patientCount,
+                     int bedOccupancy[][MAX_BEDS]);

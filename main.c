@@ -167,7 +167,13 @@ do
             break;
 
         case 6:
-            //Reports
+            generateReports(patientNames,
+                    urgency,
+                    finalBill,
+                    discount,
+                    patientCount,
+                    bedOccupancy);
+
             break;
 
         case 7:

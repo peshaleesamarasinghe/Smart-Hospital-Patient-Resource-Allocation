@@ -42,6 +42,7 @@ void monitorBeds(int bedOccupancy[][MAX_BEDS])
                available,
                percentage);
     }
-
     printf("|_____________________|___________|___________|___________|_______________|\n");
+
+    //later add positions of beds for easy lookup(bedLocations)
 }

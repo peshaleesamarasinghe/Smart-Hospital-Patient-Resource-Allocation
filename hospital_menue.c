@@ -12,7 +12,7 @@ void hospitalMenue()
     printf("|| [3] Emergency Priority Queue          ||\n");
     printf("|| [4] Bed Availability                  ||\n");
     printf("|| [5] Hospital Lookup Information       ||\n");
-    printf("|| [6]                                   ||\n");
+    printf("|| [6] Performance Reports & Analytics   ||\n");
     printf("|| [7]                                   ||\n");
     printf("|| [8] Exit                              ||\n");
     printf("===========================================\n");
