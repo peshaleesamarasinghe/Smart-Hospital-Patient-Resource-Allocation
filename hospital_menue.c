@@ -14,7 +14,7 @@ void hospitalMenue()
     printf("|| [5] Hospital Lookup Information       ||\n");
     printf("|| [6] Performance Reports & Analytics   ||\n");
     printf("|| [7] Save Resource Data                ||\n");
-    printf("|| [8] Exit                              ||\n");
+    printf("|| [0] Exit                              ||\n");
     printf("===========================================\n");
 }
 

@@ -25,7 +25,7 @@ void displayTriageQueue(char patientNames[][50],
     {
         for(j = 0; j < patientCount - i - 1; j++)
         {
-            if(urgency[order[j] < urgency[order[j+1]]])
+            if(urgency[order[j]] < urgency[order[j+1]])
             {
                 temp = order[j];
                 order[j] = order[j+1];

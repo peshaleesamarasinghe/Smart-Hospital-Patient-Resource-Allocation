@@ -48,21 +48,21 @@ void generateReports(char patientNames[][50],
     printf("|                                                                         |\n");
     printf("| TRIAGE SUMMARY                                                          |\n");
     printf("|-------------------------------------------------------------------------|\n");
-    printf("| Normal Patients   : %d                                                   |\n", normal);
-    printf("| Urgent Patients   : %d                                                   |\n", urgent);
-    printf("| Critical Patients : %d                                                   |\n", critical);
+    printf("| Normal Patients   : %-52d|\n", normal);
+    printf("| Urgent Patients   : %-52d|\n", urgent);
+    printf("| Critical Patients : %-52d|\n", critical);
     printf("|                                                                         |\n");
     printf("| FINANCIAL SUMMARY                                                       |\n");
     printf("|-------------------------------------------------------------------------|\n");
-    printf("| Total Revenue     : LKR %.2f                                            |\n", totalRevenue);
-    printf("| Total Discounts   : LKR %.2f                                            |\n", totalDiscount);
+    printf("| Total Revenue     : LKR %-48.2f|\n", totalRevenue);
+    printf("| Total Discounts   : LKR %-48.2f|\n", totalDiscount);
 
     if(highestIndex != -1)
     {
-        printf("| Highest Paying     : %s                                                |\n",
+        printf("| Highest Paying    : %-52s|\n",
                patientNames[highestIndex]);
 
-        printf("| Highest Bill       : LKR %.2f                                          |\n",
+        printf("| Highest Bill      : LKR %-48.2f|\n",
                finalBill[highestIndex]);
     }
     else
