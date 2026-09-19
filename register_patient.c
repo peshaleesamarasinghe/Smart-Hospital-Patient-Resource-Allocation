@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "prototypes.h"
 
 void registerPatient(char patientNames[][50],
@@ -47,7 +48,7 @@ void registerPatient(char patientNames[][50],
     printf("Generated Patient ID : PAT-%04d\n", 1001 + idx);
 
     printf("\nPatient Name : ");
-    scanf(" %[^\n]", patientNames[idx]);
+    scanf(" %49[^\n]", patientNames[idx]);
 
 
     do
@@ -164,6 +165,11 @@ void registerPatient(char patientNames[][50],
 
         } while(days[idx] < 1);
     }
+        system("cls");
+
+            printf("\nPatient Registration Succesfull!\nPress ENTER to print \"Patient Registration and Bill Reciept\"");
+            getchar();
+            getchar();
 }
 else
 {

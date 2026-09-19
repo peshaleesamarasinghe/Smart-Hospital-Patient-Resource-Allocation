@@ -1,28 +1,30 @@
 # depslib dependency file v1.0
-1789709970 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\main.c
+1789847181 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\main.c
 	<stdio.h>
+	<stdlib.h>
 	"prototypes.h"
 
 1789651387 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\hospital_header.c
 	<stdio.h>
 	"prototypes.h"
 
-1789755349 c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\prototypes.h
+1789847180 c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\prototypes.h
 
 1789710018 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\hospital_menue.c
 	<stdio.h>
 	"prototypes.h"
 
-1789670833 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\print_specialties.c
+1789846293 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\print_specialties.c
 	<stdio.h>
 	"prototypes.h"
 
-1789670834 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\print_wards.c
+1789846294 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\print_wards.c
 	<stdio.h>
 	"prototypes.h"
 
-1789755349 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\register_patient.c
+1789844943 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\register_patient.c
 	<stdio.h>
+	<stdlib.h>
 	"prototypes.h"
 
 1789672662 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\initialize_beds.c
@@ -41,11 +43,11 @@
 	<stdio.h>
 	"prototypes.h"
 
-1789714622 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\bed_monitoring.c
+1789847639 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\bed_monitoring.c
 	<stdio.h>
 	"prototypes.h"
 
-1789708958 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\generate_report.c
+1789846371 source:c:\users\pesha\onedrive\desktop\smart hospital system\smart hospital system\generate_report.c
 	<stdio.h>
 	"prototypes.h"
 

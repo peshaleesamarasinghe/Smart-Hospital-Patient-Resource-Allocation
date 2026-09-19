@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "prototypes.h"
 
-void monitorBeds(int bedOccupancy[][MAX_BEDS])
+void monitorAndDisplayBeds(int bedOccupancy[][MAX_BEDS])
 {
     int i, j;
     int occupied;
@@ -44,7 +44,21 @@ void monitorBeds(int bedOccupancy[][MAX_BEDS])
     }
     printf("|_____________________|___________|___________|___________|_______________|\n");
 
-    //later add positions of beds for easy lookup(bedLocations)
+    printf("\nBED STATUS\n");
+    printf("0 = Available   1 = Occupied\n\n");
+
+    for (i = 0; i < WARDS; i++)
+    {
+        printf("%-20s : ",wardNames[i]);
+
+        for (j = 0; j < wardCapacities[i]; j++)
+        {
+            printf("%d ", bedOccupancy[i][j]);
+        }
+
+        printf("\n");
+    }
+
 }
 
 void saveBeds(int bedOccupancy[][MAX_BEDS])

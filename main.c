@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "prototypes.h"
 
 const char specialtyNames[SPECIALTIES][30] =
@@ -90,13 +91,29 @@ int main()
 
     initializeBeds(bedOccupancy);
 
+
+    system("cls");
     hospitalHeader();
+
+            printf("\nWelcome to the SMART HOSPITAL!\nPress Enter to view MAIN MENUE...\n");
+            getchar();
 
 do
  {
-       hospitalMenue();
-       printf("\nSelect an option: ");
-       scanf("%d", &choice);
+     system("cls");
+
+
+     hospitalMenue();
+     printf("\nSelect an option: ");
+
+       if(scanf("%d", &choice) !=1)
+       {
+           printf("\n Invalid Input !\n Please Enter a number.\n");
+
+           clearInputBuffer();
+           choice = -1;
+           continue;
+       }
 
        switch(choice)
     {
@@ -125,6 +142,9 @@ do
                     wardCapacities,
                     bedNumber,
                     bedOccupancy);
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
             break;
 
         case 2:
@@ -144,16 +164,28 @@ do
                      discount,
                      finalBill,
                      patientCount);
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
             break;
 
         case 3:
             displayTriageQueue(patientNames,
                        urgency,
                        patientCount);
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
             break;
 
         case 4:
-            monitorBeds(bedOccupancy);
+            monitorAndDisplayBeds(bedOccupancy);
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
             break;
 
         case 5:
@@ -164,6 +196,10 @@ do
             printWards(wardNames,
                        wardRates,
                        wardCapacities);
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
             break;
 
         case 6:
@@ -174,18 +210,33 @@ do
                     patientCount,
                     bedOccupancy);
 
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
             break;
 
         case 7:
             saveBeds(bedOccupancy);
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
             break;
 
         case 0:
             printf("\nExiting Smart Hospital System...\n");
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
             break;
 
         default:
             printf("\nInvalid option!\n");
+
+            printf("\nPress ENTER to check MAIN MENUE...\n");
+            getchar();
+            getchar();
     }
 
  } while(choice != 0);
@@ -195,4 +246,14 @@ do
 
 
     return 0;
+}
+
+void clearInputBuffer(void)
+{
+    int ch;
+
+    while((ch = getchar()) != '\n' && ch != EOF)
+    {
+        //Clear remaining input
+    }
 }

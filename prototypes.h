@@ -92,7 +92,7 @@ void displayTriageQueue(char patientNames[][50],
                         int urgency[],
                         int patientCount);
 
-void monitorBeds(int bedOccupancy[][MAX_BEDS]);
+void monitorAndDisplayBeds(int bedOccupancy[][MAX_BEDS]);
 
 void generateReports(char patientNames[][50],
                      int urgency[],
@@ -114,3 +114,5 @@ void patientLog(int patientCount,
                 int days[],
                 double waitTime[],
                 double finalBill[]);
+
+void clearInputBuffer();

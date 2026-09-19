@@ -20,3 +20,168 @@ Days Admitted: 2
 Waiting Time: 0 minutes
 Final Bill: LKR 29400.00
 ------------------------------------------------------------
+Patient ID: PAT-1001
+Name: PESHALEE SAVINDYA
+Age: 21
+Triage Level: 1
+Specialty: General Practice (OPD)
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 7500.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: Peshalee Savindya
+Age: 21
+Triage Level: 1
+Specialty: General Practice (OPD)
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 7500.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: drt
+Age: 3
+Triage Level: 2
+Specialty: Paediatrics
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 3
+Waiting Time: 0 minutes
+Final Bill: LKR 10200.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: gd
+Age: 4
+Triage Level: 3
+Specialty: Cardiology
+Ward: Paediatric Ward
+Bed Number: 1
+Days Admitted: 3
+Waiting Time: 0 minutes
+Final Bill: LKR 21037.50
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: rnh
+Age: 4
+Triage Level: 3
+Specialty: Paediatrics
+Ward: Paediatric Ward
+Bed Number: 1
+Days Admitted: 1
+Waiting Time: 0 minutes
+Final Bill: LKR 8287.50
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: ffj
+Age: 5
+Triage Level: 2
+Specialty: Paediatrics
+Ward: Paediatric Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 15000.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: F
+Age: 2
+Triage Level: 1
+Specialty: General Practice (OPD)
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 1
+Waiting Time: 0 minutes
+Final Bill: LKR 3825.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: x
+Age: 3
+Triage Level: 1
+Specialty: General Practice (OPD)
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 4
+Waiting Time: 0 minutes
+Final Bill: LKR 11475.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: fd
+Age: 3
+Triage Level: 3
+Specialty: Cardiology
+Ward: Paediatric Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 15937.50
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: d
+Age: 3
+Triage Level: 2
+Specialty: General Practice (OPD)
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 1
+Waiting Time: 0 minutes
+Final Bill: LKR 4080.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: Peshalee Savindya
+Age: 21
+Triage Level: 2
+Specialty: Paediatrics
+Ward: Paediatric Ward
+Bed Number: 1
+Days Admitted: 3
+Waiting Time: 0 minutes
+Final Bill: LKR 21000.00
+------------------------------------------------------------
+Patient ID: PAT-1002
+Name: Osanda Samarasinghe
+Age: 51
+Triage Level: 1
+Specialty: General Practice (OPD)
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 7500.00
+------------------------------------------------------------
+Patient ID: PAT-1003
+Name: Imasha Sandamin
+Age: 23
+Triage Level: 3
+Specialty: Neurology
+Ward: Surgical Ward
+Bed Number: 1
+Days Admitted: 6
+Waiting Time: 0 minutes
+Final Bill: LKR 79500.00
+------------------------------------------------------------
+Patient ID: PAT-1004
+Name: Samadara Moraes
+Age: 50
+Triage Level: 1
+Specialty: Cardiology
+Ward: General Ward
+Bed Number: 2
+Days Admitted: 23
+Waiting Time: 0 minutes
+Final Bill: LKR 73500.00
+------------------------------------------------------------
+Patient ID: PAT-1001
+Name: gbf
+Age: 3
+Triage Level: 3
+Specialty: General Practice (OPD)
+Ward: General Ward
+Bed Number: 1
+Days Admitted: 2
+Waiting Time: 0 minutes
+Final Bill: LKR 7012.50
+------------------------------------------------------------
